@@ -6,7 +6,6 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
-// const PORT = envd
 
 const db = require('./config/database');
 const saltRounds = 10;
@@ -24,7 +23,7 @@ app.get('/', (req, res) => { res.send("connected to heroku!")
 
 //REST constrollers
 
-app.post('/signin', (req, res) => {res.send("it is working!")}); //signin.handleSignin(req, res, db, bcrypt)
+app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)}); //signin.handleSignin(req, res, db, bcrypt)
 
 app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});
 

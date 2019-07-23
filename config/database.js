@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 
 //Connect to the database using Sequelize:
 const connection = new Sequelize('smart-brain2', 'root', '1306', {
-    host: 'localhost',
+    host: 'postgresql-infinite-36127',
     dialect: 'mysql',
     define: {
         timestamps: false

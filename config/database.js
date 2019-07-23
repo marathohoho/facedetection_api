@@ -7,7 +7,7 @@ const Sequelize = require('sequelize');
 const connection = new Sequelize({
     host: process.env.DATABASE_URL,
     ssl: true,
-    dialect: 'postgres',
+    dialect: 'postgres'
 });
 
 //connect and check connection to the database

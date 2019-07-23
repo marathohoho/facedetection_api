@@ -6,6 +6,7 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
+// const PORT = envd
 
 const db = require('./config/database');
 const saltRounds = 10;
@@ -33,8 +34,9 @@ app.put('/image/:id', (req, res) => {image.handleImage(req, res, db)});
 
 app.post('/imageURL/:id', (req, res) => {image.handleApiUrl(req, res)});
 
-app.listen(4000, ()=> {
-    console.log("server is running on port 4000")
+app.listen(process.env.PORT || 4000, ()=> {
+    console.log(`server is running on port ${process.env.PORT}`)
 });
 
 
+// console.log(process.env)

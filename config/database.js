@@ -4,18 +4,10 @@
 const Sequelize = require('sequelize');
 
 //Connect to the database using Sequelize:
-const connection = new Sequelize('smart-brain2', 'root', '1306', {
-    host: 'postgresql-infinite-36127',
+const connection = new Sequelize({
+    host: process.env.DATABASE_URL,
+    ssl: true,
     dialect: 'postgres',
-    define: {
-        timestamps: false
-    },
-    pool:{
-        max: 5,
-        min: 0,
-        acquire: 30000,
-        idle: 10000
-      } 
 });
 
 //connect and check connection to the database

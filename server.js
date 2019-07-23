@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 //REST constrollers
 
-app.post('/signin', (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
+app.post('/signin', (req, res) => {res.send("it is working!")}); //signin.handleSignin(req, res, db, bcrypt)
 
 app.post('/register', (req, res) => {register.handleRegister(req, res, db, bcrypt, saltRounds)});
 

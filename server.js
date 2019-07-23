@@ -15,11 +15,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-    db.users.findAll()
-        .then(users => {
-            res.send(users);
-        })
+app.get('/', (req, res) => { res.send("connected to heroku!")
+    // db.users.findAll()
+    //     .then(users => {
+    //         res.send(users);
+    //     })
 })
 
 //REST constrollers

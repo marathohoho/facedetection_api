@@ -26,6 +26,10 @@ const handleRegister = (req, res, db, bcrypt, saltRounds) => {
                         res.status(400).json("unable to register");
                     })
             })
+            .catch(error => {
+                res.status(400).json("unable to register");
+            })
+
         })
 };
 
